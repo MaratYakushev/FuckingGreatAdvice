@@ -7,4 +7,7 @@
     <string name="card_title">Ох**нный бл*ть совет</string>
     <string name="button_add_title">Добавить</string>
     <string name="button_refresh_title">Еще совет</string>
+
+    <!--fragment_advice_favorites-->
+    <string name="delete_favorite_advice_button">Удалить</string>
 </resources>

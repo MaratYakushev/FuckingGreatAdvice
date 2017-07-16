@@ -28,11 +28,11 @@
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
+                android:layout_height="0.2dp"
                 android:layout_below="@id/card_title"
                 android:layout_marginLeft="@dimen/line_margin_right_and_left"
                 android:layout_marginRight="@dimen/line_margin_right_and_left"
-                android:background="@color/color_black" />
+                android:background="@color/color_gray" />
 
             <TextView
 

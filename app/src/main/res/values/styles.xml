@@ -22,11 +22,22 @@
         <item name="android:layout_margin">@dimen/card_title_margin</item>
     </style>
 
+    <style name="favoriteTextStyle" parent="textStyleBase">
+        <item name="android:textSize">@dimen/favorite_text_size</item>
+        <item name="android:padding">@dimen/favorite_text_padding</item>
+    </style>
+
     <!--parent="@android:style/Widget.Button"-->
 
     <style name="buttonStyle">
         <item name="android:textColor">@color/color_white</item>
         <item name="android:background">@drawable/button_selector</item>
         <item name="android:layout_margin">@dimen/button_margin</item>
+    </style>
+
+    <style name="buttonDeleteFavoriteStyle">
+        <item name="android:textColor">@color/color_red</item>
+        <item name="android:background">@color/color_transparent</item>
+        <item name="android:layout_margin">@dimen/delete_favorite_button_margin</item>
     </style>
 </resources>
