@@ -1,5 +1,6 @@
 package com.ulsu.marat.fuckinggreatadvice.controllers;
 
+import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.text.Html;
 import android.text.method.ScrollingMovementMethod;
@@ -21,6 +22,7 @@ import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EFragment;
 import org.androidannotations.annotations.InstanceState;
+import org.androidannotations.annotations.LongClick;
 import org.androidannotations.annotations.ViewById;
 
 import java.io.UnsupportedEncodingException;
@@ -53,16 +55,25 @@ public class AdviceFragment extends Fragment {
         ReqFromDb();
     }
 
+
     @InstanceState
     String text;
 
     private FAdvice mFAdvice;
     private DatabaseDao db;
+    CallBack callBack;
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        callBack = (CallBack) context;
+    }
 
     @AfterViews
     public void bind() {
         mAdviceText.setMovementMethod(new ScrollingMovementMethod());
         db = DatabaseDao.getDBInstance(getActivity().getApplicationContext());
+        Request();
     }
 
     private void Request() {
@@ -96,7 +107,9 @@ public class AdviceFragment extends Fragment {
         int flag = DBHelper.addAdviceToDB(db,fAdvice);
         if (flag == -1) {
             PrintToast("Уже есть");
+            return;
         }
+        callBack.updateList(fAdvice);
     }
 
     private void ReqFromDb(){

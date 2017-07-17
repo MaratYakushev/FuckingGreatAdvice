@@ -7,13 +7,14 @@ import android.support.v7.widget.Toolbar;
 
 import com.ulsu.marat.fuckinggreatadvice.R;
 import com.ulsu.marat.fuckinggreatadvice.adapters.ViewPagerAdapter;
+import com.ulsu.marat.fuckinggreatadvice.model.FAdvice;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
 
 @EActivity(R.layout.activity_main)
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements CallBack{
 
     @ViewById(R.id.toolbar)
     Toolbar toolbar;
@@ -34,5 +35,11 @@ public class MainActivity extends AppCompatActivity {
         mViewPagerAdapter.addFragment(new FavoritesAdviceFragment_(),getString(R.string.favorites_advice_tab_title));
         mViewPager.setAdapter(mViewPagerAdapter);
         mTabLayout.setupWithViewPager(mViewPager);
+    }
+
+    @Override
+    public void updateList(FAdvice fAdvice) {
+        FavoritesAdviceFragment_ fragment = (FavoritesAdviceFragment_) mViewPagerAdapter.getItem(1);
+        fragment.UpdateList(fAdvice);
     }
 }

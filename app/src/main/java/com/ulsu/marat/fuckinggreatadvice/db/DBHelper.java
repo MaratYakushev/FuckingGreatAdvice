@@ -3,6 +3,7 @@ package com.ulsu.marat.fuckinggreatadvice.db;
 import com.ulsu.marat.fuckinggreatadvice.db.modelSpec.AdviceModel;
 import com.ulsu.marat.fuckinggreatadvice.model.FAdvice;
 import com.yahoo.squidb.data.SquidCursor;
+import com.yahoo.squidb.sql.Delete;
 import com.yahoo.squidb.sql.Query;
 
 import java.util.ArrayList;
@@ -41,5 +42,10 @@ public class DBHelper {
         adviceModel.setText(fAdvice.getText());
         adviceModel.setSound(fAdvice.getSound());
         return db.persist(adviceModel) ? 1 : 0;
+    }
+
+    public static int deleteDataById(DatabaseDao db, int id){
+        Delete delete = Delete.from(AdviceModel.TABLE).where(AdviceModel.ADVICE_ID.eq(id));
+        return db.delete(delete);
     }
 }
