@@ -1,25 +1,16 @@
-package com.ulsu.marat.fuckinggreatadvice;
+package com.ulsu.marat.fuckinggreatadvice.controllers;
 
-import android.content.Context;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+import com.ulsu.marat.fuckinggreatadvice.R;
 import com.ulsu.marat.fuckinggreatadvice.adapters.ViewPagerAdapter;
-import com.ulsu.marat.fuckinggreatadvice.controllers.AdviceFragment;
-import com.ulsu.marat.fuckinggreatadvice.controllers.AdviceFragment_;
-import com.ulsu.marat.fuckinggreatadvice.controllers.FavoritesAdviceFragment_;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.ViewById;
-
-import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
-import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 @EActivity(R.layout.activity_main)
 public class MainActivity extends AppCompatActivity {
