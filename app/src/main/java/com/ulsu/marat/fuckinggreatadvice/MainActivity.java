@@ -6,6 +6,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -43,5 +44,6 @@ public class MainActivity extends AppCompatActivity {
         mViewPagerAdapter.addFragment(new FavoritesAdviceFragment_(),getString(R.string.favorites_advice_tab_title));
         mViewPager.setAdapter(mViewPagerAdapter);
         mTabLayout.setupWithViewPager(mViewPager);
+        Log.d("TAg","bind");
     }
 }
