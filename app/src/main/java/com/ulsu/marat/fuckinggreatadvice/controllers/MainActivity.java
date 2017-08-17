@@ -4,6 +4,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 
 import com.ulsu.marat.fuckinggreatadvice.R;
 import com.ulsu.marat.fuckinggreatadvice.adapters.ViewPagerAdapter;
@@ -41,5 +42,6 @@ public class MainActivity extends AppCompatActivity implements CallBack{
     public void updateList(FAdvice fAdvice) {
         FavoritesAdviceFragment_ fragment = (FavoritesAdviceFragment_) mViewPagerAdapter.getItem(1);
         fragment.UpdateList(fAdvice);
+        Log.d("Tag","Update");
     }
 }
