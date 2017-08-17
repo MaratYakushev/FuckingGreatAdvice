@@ -3,6 +3,7 @@ package com.ulsu.marat.fuckinggreatadvice.controllers;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
 import com.ulsu.marat.fuckinggreatadvice.R;
 import com.ulsu.marat.fuckinggreatadvice.adapters.FavoritesAdviceAdapter;
@@ -36,5 +37,6 @@ public class FavoritesAdviceFragment extends Fragment {
     public void UpdateList(FAdvice fAdvice){
         adviceAdapter.addElement(fAdvice);
         adviceAdapter.notifyDataSetChanged();
+        Log.d("Tag", "UpdateList");
     }
 }
